@@ -36,12 +36,25 @@ const workoutSchema = new Schema({
         trim: true,
     },
   }],
-  
+
   day: {
     type: Date,
     default: Date.now
   }
 });
+
+//create custom fx called totalDuration, totalWeight, totalSets, totalReps, totalDistance
+// UserSchema.methods.setFullName = function() {
+//     this.fullName = `${this.firstName} ${this.lastName}`;
+  
+//     return this.fullName;
+//   };
+  
+  workoutSchema.methods.totalDuration = function() {
+    //this.lastUpdated = Date.now();
+  console.log("inside total duration")
+    return 0;
+  };
 
 const Workout = mongoose.model("Workout", workoutSchema);
 
