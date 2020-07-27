@@ -40,20 +40,27 @@ const workoutSchema = new Schema({
   day: {
     type: Date,
     default: Date.now
-  }
+  },
+  totalDuration: {
+    type: Number,
+  },
 });
 
-//create custom fx called totalDuration, totalWeight, totalSets, totalReps, totalDistance
-// UserSchema.methods.setFullName = function() {
-//     this.fullName = `${this.firstName} ${this.lastName}`;
+// ++++++ FIX SETTOTALDURATION FUCTION TO ADD ALL DURATION VALUES - FORLOOP - LINE 52 ++++++ 
+// 
+
+//1. create server
+//2. add html routes (route/html-routes.js)
+//3. created model, looked at seed file to see how it is suppose to be created
+//4. seed file, used package.json script "npm run seed"
+//5. add apiroutes
+//6. debug it all (found out we need totalDuration so did that)
+
   
-//     return this.fullName;
-//   };
-  
-  workoutSchema.methods.totalDuration = function() {
-    //this.lastUpdated = Date.now();
-  console.log("inside total duration")
-    return 0;
+  workoutSchema.methods.setTotalDuration = function() {
+    this.totalDuration =0; //`${this.firstName} ${this.lastName}`;
+
+    return this.totalDuration;
   };
 
 const Workout = mongoose.model("Workout", workoutSchema);

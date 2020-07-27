@@ -39,7 +39,7 @@ router.put("/api/workouts/:id", (req, res) => {
 
 router.post("/api/workouts", (req, res) => {
     const user = new Workout(req.body);
-    user.totalDuration();
+    user.setTotalDuration();
 
 
   Workout.create(user)
